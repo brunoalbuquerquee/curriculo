@@ -1,0 +1,435 @@
+@font-face {
+  font-family: "Patrician";
+  src: url(fonts/Patrician.tff);
+}
+
+body {
+  height: 5700px;
+  background: linear-gradient( #0d1117, #1c293d);
+  scroll-behavior: smooth;
+}
+
+
+header {
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: #f2f2f2;
+  align-items: center;
+  padding: 24px 550px;
+  text-decoration: none;
+  font-size: 17px;
+  font-family: 'Patrician';
+  transition: 0.6s;
+  justify-content: space-between;
+}
+
+header ul{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header li {
+  position: relative;
+  list-style: none;
+}
+
+li:hover{
+  color: blue;
+}
+
+header ul li a{
+  position: relative;
+  margin: 0 15px;
+  text-decoration: none;
+  color: white;
+  letter-spacing: 5px;
+}
+header.sticky{
+  padding: 24px 550px;
+  background-color: #080a0d;
+}
+header.sticky ul li a{
+  color: white;
+}
+
+h1{
+    margin-top: 100px;
+    color: #f2f2f2;
+    text-align: center;
+    text-decoration: none;
+    font-size: 100px;
+    font-family: 'Patrician';
+  }
+
+  .intro{
+    margin-top: 100px;
+    color: #f2f2f2;
+    text-align: center;
+    text-decoration: none;
+    font-size: 30px;
+    font-family: 'Patrician';
+    padding: 10px 500px;
+    
+  }
+
+h2{
+    margin-top: 100px;
+    color: #f2f2f2;
+    text-align: center;
+    text-decoration: none;
+    font-size: 100px;
+    font-family: 'Patrician';
+  }
+
+  ::selection{
+    color: #fff;
+    background: #0066ff;
+    box-shadow: 0 24px 78px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    transition: all 0.3s cubic-bezier(.25, .8, .25,1);
+  }
+  .skill-bars{
+    padding: 25px 30px;
+    width: 600px;
+    margin-top: 100px;
+    margin-left: 620px;
+    background: #263040;
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    box-shadow: 0 24px 78px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    transition: all 0.3s cubic-bezier(.25, .8, .25,1);
+  }
+  .skill-bars:hover{
+    box-shadow: 0 54px 10008px rgba(0, 0, 0, 0.25), 0 30px 10px rgba(0, 0, 0, 0.22);
+  }
+  .skill-bars .bar{
+    margin: 20px 0;
+  }
+  .skill-bars .bar:first-child{
+    margin-top: 0px;
+  }
+  .skill-bars .bar .info{
+    margin-bottom: 5px;
+  }
+  .skill-bars .bar .info span{
+    font-weight: 500;
+    font-size: 17px;
+    opacity: 0;
+    animation: showText 0.5s 1s linear forwards;
+  }
+  @keyframes showText {
+    100%{
+      opacity: 1;
+    }
+  }
+  .skill-bars .bar .progress-line{
+    height: 10px;
+    width: 100%;
+    background: #f0f0f0;
+    position: relative;
+    transform: scaleX(0);
+    transform-origin: left;
+    border-radius: 10px;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.05),
+                0 1px rgba(255,255,255,0.8);
+    animation: animate 1s cubic-bezier(1,0,0.5,1) forwards;
+  }
+  @keyframes animate {
+    100%{
+      transform: scaleX(1);
+    }
+  }
+  .bar .progress-line span{
+    height: 100%;
+    position: absolute;
+    border-radius: 10px;
+    transform: scaleX(0);
+    transform-origin: left;
+    background: #0066ff;
+    animation: animate 1s 1s cubic-bezier(1,0,0.5,1) forwards;
+  }
+  .bar .progress-line.html span{
+    width: 95%;
+    font-family: 'Patrician';
+  }
+  .bar .progress-line.css span{
+    width: 95%;
+    font-family: 'Patrician';
+  }
+  .bar .progress-line.python span{
+    width: 90%;
+    font-family: 'Patrician';
+  }
+  .bar .progress-line.javascript span{
+    width: 70%;
+    font-family: 'Patrician';
+  }
+  .bar .progress-line.java span{
+    width: 50%;
+    font-family: 'Patrician';
+  }
+  .progress-line span::before{
+    position: absolute;
+    content: "";
+    top: -10px;
+    right: 0;
+    height: 0;
+    width: 0;
+    border: 7px solid transparent;
+    border-bottom-width: 0px;
+    border-right-width: 0px;
+    border-top-color: #000;
+    opacity: 0;
+    animation: showText2 0.5s 1.5s linear forwards;
+  }
+  .progress-line span::after{
+    position: absolute;
+    top: -28px;
+    right: 0;
+    font-weight: 500;
+    background: #000;
+    color: #fff;
+    padding: 1px 8px;
+    font-size: 12px;
+    border-radius: 3px;
+    opacity: 0;
+    animation: showText2 0.5s 1.5s linear forwards;
+  }
+  @keyframes showText2 {
+    100%{
+      opacity: 1;
+    }
+  }
+  .progress-line.html span::after{
+    content: "95%";
+    font-family: 'Patrician';
+  }
+  .progress-line.css span::after{
+    content: "95%";
+    font-family: 'Patrician';
+  }
+  .progress-line.python span::after{
+    content: "90%";
+    font-family: 'Patrician';
+  }
+  .progress-line.javascript span::after{
+    content: "70%";
+    font-family: 'Patrician';
+  }
+  .progress-line.java span::after{
+    content: "50%";
+    font-family: 'Patrician';
+  }
+
+  h1{
+    margin-top: 100px;
+    color: #f2f2f2;
+    text-align: center;
+    text-decoration: none;
+    font-size: 100px;
+    font-family: 'Patrician';
+  }
+  h2{
+    margin-top: 100px;
+    color: #f2f2f2;
+    text-align: center;
+    text-decoration: none;
+    font-size: 100px;
+    font-family: 'Patrician';
+  }
+
+  ::selection{
+    color: #fff;
+    background: #0066ff;
+    box-shadow: 0 24px 78px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    transition: all 0.3s cubic-bezier(.25, .8, .25,1);
+  }
+  .skill-bars2{
+    padding: 25px 30px;
+    width: 600px;
+    margin-top: 100px;
+    margin-left: 620px;
+    background: #263040;
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    box-shadow: 0 24px 78px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    transition: all 0.3s cubic-bezier(.25, .8, .25,1);
+  }
+  .skill-bars2 .bar2{
+    margin: 20px 0;
+  }
+  .skill-bars2 .bar:first-child{
+    margin-top: 0px;
+  }
+  .skill-bars2 .ba2r .info2{
+    margin-bottom: 5px;
+  }
+  .skill-bars2 .bar2 .info2 span{
+    font-weight: 500;
+    font-size: 17px;
+    opacity: 0;
+    animation: showText 0.5s 1s linear forwards;
+  }
+  @keyframes showText {
+    100%{
+      opacity: 1;
+    }
+  }
+  .skill-bars2 .bar2 .progress-line{
+    height: 10px;
+    width: 100%;
+    background: #f0f0f0;
+    position: relative;
+    transform: scaleX(0);
+    transform-origin: left;
+    border-radius: 10px;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.05),
+                0 1px rgba(255,255,255,0.8);
+    animation: animate 1s cubic-bezier(1,0,0.5,1) forwards;
+  }
+  @keyframes animate {
+    100%{
+      transform: scaleX(1);
+    }
+  }
+  .skill-bars2:hover{
+    box-shadow: 0 54px 10008px rgba(0, 0, 0, 0.25), 0 30px 10px rgba(0, 0, 0, 0.22);
+  }
+  .bar2 .progress-line span{
+    height: 100%;
+    position: absolute;
+    border-radius: 10px;
+    transform: scaleX(0);
+    transform-origin: left;
+    background: #0066ff;
+    animation: animate 1s 1s cubic-bezier(1,0,0.5,1) forwards;
+  }
+  .bar2 .progress-line.photoshop span{
+    width: 100%;
+    font-family: 'Patrician';
+  }
+  .bar2 .progress-line.illustrator span{
+    width: 50%;
+    font-family: 'Patrician';
+  }
+  .bar2 .progress-line.premiere span{
+    width: 75%;
+    font-family: 'Patrician';
+  }
+  .bar2 .progress-line.lightroom span{
+    width: 70%;
+    font-family: 'Patrician';
+  }
+  .bar2 .progress-line.figma span{
+    width: 80%;
+    font-family: 'Patrician';
+  }
+  .progress-line span::before{
+    position: fixed;
+    content: "";
+    top: -10px;
+    right: 0;
+    height: 0;
+    width: 0;
+    border: 7px solid transparent;
+    border-bottom-width: 0px;
+    border-right-width: 0px;
+    border-top-color: #000;
+    opacity: 1;
+    animation: showText2 0.5s 1.5s linear forwards;
+  }
+  .progress-line span::after{
+    position: fixed;
+    top: -28px;
+    right: 0;
+    font-weight: 500;
+    background: #000;
+    color: #fff;
+    padding: 1px 8px;
+    font-size: 12px;
+    border-radius: 3px;
+    opacity: 1;
+    animation: showText2 0.5s 1.5s linear forwards;
+  }
+  @keyframes showText2 {
+    100%{
+      opacity: 1;
+    }
+  }
+  .progress-line.photoshop span::after{
+    content: "100%";
+    font-family: 'Patrician';
+  }
+  .progress-line.illustrator span::after{
+    content: "50%";
+    font-family: 'Patrician';
+  }
+  .progress-line.premiere span::after{
+    content: "75%";
+    font-family: 'Patrician';
+  }
+  .progress-line.lightroom span::after{
+    content: "70%";
+    font-family: 'Patrician';
+  }
+  .progress-line.figma span::after{
+    content: "80%";
+    font-family: 'Patrician';
+  }
+  h1{
+    color: #f2f2f2;
+    margin-top: 100px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 100px;
+    font-family: 'Patrician';
+  }
+
+  h3{
+    color: #f2f2f2;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    margin: 5px;
+    font-family: 'Patrician';
+  }
+
+  .contato{
+    width: 700px;
+    margin: 0px auto;
+    color: #263040;
+    padding: 10px;
+    box-shadow: 0 24px 78px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    transition: all 0.3s cubic-bezier(.25, .8, .25,1);
+  }
+
+  .contato:hover{
+    box-shadow: 0 54px 10008px rgba(0, 0, 0, 0.25), 0 30px 10px rgba(0, 0, 0, 0.22);
+  }
+
+  .contato li{
+    margin: 20px 0;
+    padding: 10px;
+  }
+
+  img{
+    margin-left: 820px;
+    box-shadow: 0 24px 78px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    transition: all 0.3s cubic-bezier(.25, .8, .25,1);
+  }
+
+  .port{
+    color: #f2f2f2;
+    text-align: center;
+    text-decoration: none;
+    font-size: 30px;
+    font-family: 'Patrician';
+
+  }
+  img:hover{
+    box-shadow: 0 54px 10008px rgba(0, 0, 0, 0.25), 0 30px 10px rgba(0, 0, 0, 0.22);
+  }
